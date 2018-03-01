@@ -86,7 +86,7 @@ Alpha = [a-zA-Z_]
 
 // literals
 {Digit}+					{ return token(INT_LITERAL); }
-//\"\"						{ return token(STRING_LITERAL, yytext()); }
+\"(\\.|[^\\\"])*\"			{ return token(STRING_LITERAL, yytext()); }
 
 // whitespace
 {WhiteSpace}*				{ }
