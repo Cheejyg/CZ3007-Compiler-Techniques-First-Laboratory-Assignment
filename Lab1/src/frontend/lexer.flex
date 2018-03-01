@@ -89,7 +89,7 @@ Alpha = [a-zA-Z_]
 \"(\\.|[^\\\"])*\"			{ return token(STRING_LITERAL, yytext()); }
 
 // whitespace
-{WhiteSpace}*|\/\/.*|\/\*.*\*\/	{ }
+{WhiteSpace}*				{ }
 
 /* You don't need to change anything below this line. */
 .							{ throw new Error("unexpected character '" + yytext() + "'"); }
