@@ -46,14 +46,14 @@ Alpha = [a-zA-Z_]
 "boolean"					{ return token(BOOLEAN); }
 "break"						{ return token(BREAK); }
 "else"						{ return token(ELSE); }
-"false"|0					{ return token(FALSE); }
+"false"						{ return token(FALSE); }
 "if"						{ return token(IF); }
 "import"					{ return token(IMPORT); }
 "int"						{ return token(INT); }
 "module"					{ return token(MODULE); }
 "public"					{ return token(PUBLIC); }
 "return"					{ return token(RETURN); }
-"true"|1					{ return token(TRUE); }
+"true"						{ return token(TRUE); }
 "type"						{ return token(TYPE); }
 "void"						{ return token(VOID); }
 "while"						{ return token(WHILE); }
@@ -89,7 +89,7 @@ Alpha = [a-zA-Z_]
 \"(\\.|[^\\\"])*\"			{ return token(STRING_LITERAL, yytext()); }
 
 // whitespace
-{WhiteSpace}*				{ }
+{WhiteSpace}*|\/\/.*|\/\*.*\*\/	{ }
 
 /* You don't need to change anything below this line. */
 .							{ throw new Error("unexpected character '" + yytext() + "'"); }
