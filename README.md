@@ -15,10 +15,10 @@ Download the file *lab1.zip* from the course webpage. Unzip it somewhere on your
 
 The code contained in this project is structured as follows: 
 * folder **src** contains the source code: 
-    - package **frontend** contains the code for the lexer and some helper code:
-        + file *Token.java* contains a class defining the token type used for this lab; you do not need to modify it, but you should read and understand it
-        + file *lexer.flex* contains the source code for the lexer; to complete this lab assignment, you will need to complete the code of the lexer as indicated by the comments in lexer.flex and the problem description below
-    - package test contains the unit test suite in file *LexerTests.java*; to test your token specifications in *lexer.flex*, you should add more tests here
+	- package **frontend** contains the code for the lexer and some helper code:
+		+ file *Token.java* contains a class defining the token type used for this lab; you do not need to modify it, but you should read and understand it
+		+ file *lexer.flex* contains the source code for the lexer; to complete this lab assignment, you will need to complete the code of the lexer as indicated by the comments in lexer.flex and the problem description below
+	- package test contains the unit test suite in file *LexerTests.java*; to test your token specifications in *lexer.flex*, you should add more tests here
 * folder **lib** contains third-party libraries
 * *build.xml* is an Apache Ant build file that we will use to generate the lexer from *lexer.flex*
 
@@ -108,11 +108,11 @@ For example, here shows the invocation of runtest for three unit tests in LexerT
         new Token(RETURN, 1, 1, "return"),
         new Token(WHILE, 1, 8, "while"),
         new Token(EOF, 1, 13, ""));
-		
+    
     runtest("\"\"\"",
         new Token(STRING_LITERAL, 0, 0, ""),
         (Token)null);
-		
+    
     runtest("\"\\n\"",
         new Token(STRING_LITERAL, 0, 0, "\\n"),
         new Token(EOF, 0, 4, ""));
